@@ -251,7 +251,7 @@ point_count = 2
 
 [node name="player" parent="." instance=ExtResource("1_ve4fd")]
 z_index = 5
-position = Vector2(117, 518)
+position = Vector2(-33, 31)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, -7)
@@ -762,7 +762,7 @@ position = Vector2(-407, 35)
 position = Vector2(-345, 48)
 
 [node name="apple17" parent="trash" instance=ExtResource("13_y72l8")]
-position = Vector2(-217, 38)
+position = Vector2(-216, 31)
 
 [node name="apple18" parent="trash" instance=ExtResource("13_y72l8")]
 position = Vector2(50, 48)
