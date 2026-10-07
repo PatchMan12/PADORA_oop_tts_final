@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpma248noot04"]
+
+[ext_resource type="Script" uid="uid://bfvbv1wxdlyrr" path="res://scripts/enemy_scripts/spike_path.gd" id="1_1mdf7"]
+[ext_resource type="PackedScene" uid="uid://lc6fxlids6ah" path="res://scenes/enemy_sprite_scene/spike.tscn" id="1_yb3fc"]
+
+[node name="spike_path" type="Path2D"]
+script = ExtResource("1_1mdf7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="spike" parent="PathFollow2D" instance=ExtResource("1_yb3fc")]

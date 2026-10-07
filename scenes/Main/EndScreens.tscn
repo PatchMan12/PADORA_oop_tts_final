@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://ox1rtdexls48"]
+
+[ext_resource type="Script" uid="uid://6a51onuku1l2" path="res://scripts/level_manager/EndScreen.gd" id="1_fyms0"]
+[ext_resource type="FontFile" uid="uid://b8s27lt34iuj6" path="res://assets/font/mago3.ttf" id="2_n5qwv"]
+[ext_resource type="Texture2D" uid="uid://sbxcnfq8v3yh" path="res://assets/end_screen.png" id="2_xk40a"]
+
+[node name="EndScreens" type="CanvasLayer"]
+script = ExtResource("1_fyms0")
+
+[node name="TitleLabel" type="Label" parent="."]
+z_index = 1
+offset_left = 533.0
+offset_top = 465.0
+offset_right = 573.0
+offset_bottom = 553.0
+theme_override_fonts/font = ExtResource("2_n5qwv")
+theme_override_font_sizes/font_size = 64
+
+[node name="ScoreLabel" type="Label" parent="."]
+z_index = 1
+offset_left = 537.0
+offset_top = 517.0
+offset_right = 577.0
+offset_bottom = 568.0
+theme_override_fonts/font = ExtResource("2_n5qwv")
+theme_override_font_sizes/font_size = 64
+
+[node name="InstructionLabel" type="Label" parent="."]
+z_index = 1
+offset_left = 335.0
+offset_top = 572.0
+offset_right = 951.0
+offset_bottom = 677.0
+theme_override_fonts/font = ExtResource("2_n5qwv")
+theme_override_font_sizes/font_size = 64
+text = "PRESS SPACE TO TRY AGAIN
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_xk40a")

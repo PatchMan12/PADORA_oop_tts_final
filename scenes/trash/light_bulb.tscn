@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://d27c507rdr0se"]
+
+[ext_resource type="Texture2D" uid="uid://buq0l4egs71i6" path="res://assets/trash.png" id="1_yua0a"]
+[ext_resource type="Script" uid="uid://dbev68vhipjuj" path="res://scripts/trash_scripts/TrashItem.gd" id="2_meiof"]
+[ext_resource type="AudioStream" uid="uid://bnkyqu3vhvu5i" path="res://assets/sound_asset/picking_trash.mp3" id="3_feqph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meiof"]
+atlas = ExtResource("1_yua0a")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feqph"]
+atlas = ExtResource("1_yua0a")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24l6u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_meiof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feqph")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24l6u"]
+atlas = ExtResource("1_yua0a")
+region = Rect2(69.507286, 97.950424, 18.962654, 25.675095)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kww6c"]
+size = Vector2(5, 9.25)
+
+[node name="light_bulb" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.46875, 0.4375)
+sprite_frames = SubResource("SpriteFrames_24l6u")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_meiof")
+item_id = "light_bulb"
+category = 3
+icon = SubResource("AtlasTexture_24l6u")
+pickup_sound = ExtResource("3_feqph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_kww6c")

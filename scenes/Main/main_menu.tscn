@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhoasn1rk8hch"]
+
+[ext_resource type="Script" uid="uid://2mjxtnok53kj" path="res://scripts/main_menu/MainMenu.gd" id="1_ojt6n"]
+[ext_resource type="Texture2D" uid="uid://bidnbe8sgp2nd" path="res://assets/main_menu_TTS.png" id="2_sb1iu"]
+[ext_resource type="FontFile" uid="uid://b8s27lt34iuj6" path="res://assets/font/mago3.ttf" id="3_sb1iu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb1iu"]
+bg_color = Color(0.70305514, 0.4212324, 0.74799865, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojt6n"]
+bg_color = Color(0.87179077, 0.29444554, 0.79718256, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ojt6n")
+game_scene_path = "res://scenes/Main/game.tscn"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 1112.0
+offset_bottom = 610.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sb1iu")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 302.0
+offset_right = 707.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("3_sb1iu")
+theme_override_font_sizes/font_size = 35
+text = "Play
+"
+
+[node name="LeaderboardButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 401.0
+offset_right = 703.0
+offset_bottom = 471.0
+theme_override_fonts/font = ExtResource("3_sb1iu")
+theme_override_font_sizes/font_size = 35
+text = "Leaderboard
+"
+
+[node name="NamePopup" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 324.00003
+offset_top = 172.0
+offset_right = 363.79297
+offset_bottom = 200.49692
+scale = Vector2(14.489555, 13.648524)
+theme_override_styles/panel = SubResource("StyleBoxFlat_sb1iu")
+
+[node name="NameLineEdit" type="LineEdit" parent="NamePopup"]
+layout_mode = 0
+offset_left = 6.0733385
+offset_top = 3.9564714
+offset_right = 74.63584
+offset_bottom = 34.956474
+scale = Vector2(0.4, 0.4)
+
+[node name="ConfirmButton" type="Button" parent="NamePopup"]
+layout_mode = 0
+offset_left = 7.315611
+offset_top = 18.463535
+offset_right = 50.315613
+offset_bottom = 39.463535
+scale = Vector2(0.5767944, 0.44218725)
+theme_override_fonts/font = ExtResource("3_sb1iu")
+text = "START"
+
+[node name="LeaderboardPanel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(320, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 430.0
+offset_top = 247.0
+offset_right = 750.0
+offset_bottom = 547.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojt6n")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LeaderboardPanel"]
+custom_minimum_size = Vector2(280, 220)
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 292.0
+
+[node name="EntriesList" type="VBoxContainer" parent="LeaderboardPanel/ScrollContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 6.0
+offset_right = 314.0
+offset_bottom = 42.0
+text = "X"

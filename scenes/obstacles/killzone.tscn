@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://756ckl0ocsvk"]
+
+[ext_resource type="Script" uid="uid://rkovm55e1s6e" path="res://scripts/killzone.gd" id="1_xlapc"]
+[ext_resource type="Script" uid="uid://b6plp5st6t1d4" path="res://scripts/obstacles_scripts/DeathScreen.gd" id="2_41x7a"]
+
+[node name="killzone" type="Area2D"]
+position = Vector2(2, 0)
+collision_mask = 2
+script = ExtResource("1_xlapc")
+death_screen_path = NodePath("DeathScreen")
+
+[node name="DeathScreen" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("2_41x7a")
+
+[node name="ColorRect" type="ColorRect" parent="DeathScreen"]
+z_index = 10
+offset_left = 3.0
+offset_top = 1.999999
+offset_right = 43.0
+offset_bottom = 42.0
+scale = Vector2(28.793055, 16.095045)
+color = Color(0, 0, 0, 1)
+
+[node name="YouDiedLabel" type="Label" parent="DeathScreen"]
+z_index = 10
+offset_left = 341.00006
+offset_top = 242.0
+offset_right = 542.00006
+offset_bottom = 317.0
+scale = Vector2(2.377403, 2.9687846)
+text = "                You Died
+
+press \"SPACE\" to try again"

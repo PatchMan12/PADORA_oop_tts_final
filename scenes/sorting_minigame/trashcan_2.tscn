@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://eo7rdf0cfx8s"]
+
+[ext_resource type="Texture2D" uid="uid://bo2smtj3arf6l" path="res://assets/trash_can.png" id="1_d6vse"]
+[ext_resource type="Script" uid="uid://blvqpilgbeu52" path="res://scripts/throwingTrash_minigame/TrashCan.gd" id="2_iw0kf"]
+[ext_resource type="PackedScene" uid="uid://q8esjl00w7lj" path="res://scenes/sorting_minigame/sorting_game_2.tscn" id="3_srh3p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw0kf"]
+atlas = ExtResource("1_d6vse")
+region = Rect2(3, 3, 23, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srh3p"]
+atlas = ExtResource("1_d6vse")
+region = Rect2(3, 34, 23, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67avx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw0kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srh3p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn04j"]
+atlas = ExtResource("1_d6vse")
+region = Rect2(27, 3, 23, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7610c"]
+atlas = ExtResource("1_d6vse")
+region = Rect2(27, 34, 23, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gl3m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn04j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7610c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8n2o"]
+size = Vector2(57, 25)
+
+[node name="trashcan_2" type="Node2D"]
+z_index = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11, -6.75)
+scale = Vector2(1, 1.016129)
+sprite_frames = SubResource("SpriteFrames_67avx")
+autoplay = "default"
+frame = 1
+frame_progress = 0.4853877
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -6.75)
+scale = Vector2(1, 1.016129)
+sprite_frames = SubResource("SpriteFrames_1gl3m")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_iw0kf")
+sorting_scene = ExtResource("3_srh3p")
+category_b = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, -11)
+shape = SubResource("RectangleShape2D_w8n2o")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://5yj7snjm6lmg"]
+
+[ext_resource type="Script" uid="uid://cam8sx71caou7" path="res://scripts/enemy_scripts/angel_path.gd" id="1_53njl"]
+[ext_resource type="PackedScene" uid="uid://biy7nretmbgb5" path="res://scenes/enemy_sprite_scene/angel_guard.tscn" id="1_u13lt"]
+
+[node name="angel_path" type="Path2D"]
+script = ExtResource("1_53njl")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+
+[node name="angel_guard" parent="PathFollow2D" instance=ExtResource("1_u13lt")]

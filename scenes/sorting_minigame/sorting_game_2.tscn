@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://q8esjl00w7lj"]
+
+[ext_resource type="Script" uid="uid://byt6scm2r5voh" path="res://scripts/throwingTrash_minigame/SortingGame.gd" id="1_5ttff"]
+[ext_resource type="Texture2D" uid="uid://dk3jmb10vveed" path="res://assets/trash_rec.png" id="2_8vfg7"]
+[ext_resource type="Script" uid="uid://b1hi234oyqpsm" path="res://scripts/throwingTrash_minigame/DropZone.gd" id="3_8vfg7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg44i"]
+size = Vector2(337.50012, 251.7942)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnivd"]
+size = Vector2(456, 301)
+
+[node name="sorting_game_2" type="CanvasLayer"]
+script = ExtResource("1_5ttff")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8vfg7")
+offset = Vector2(576, 324)
+
+[node name="TrashArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FeedbackLabel" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="DoneButton" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -31.0
+offset_right = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Done
+"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(303, 150)
+script = ExtResource("3_8vfg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, -14.871429)
+scale = Vector2(1.2414811, 1.134827)
+shape = SubResource("RectangleShape2D_qg44i")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(854, 154)
+script = ExtResource("3_8vfg7")
+category = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(17, -0.5)
+shape = SubResource("RectangleShape2D_tnivd")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ud1h5og1htid"]
+
+[ext_resource type="PackedScene" uid="uid://cjmemnvimedw6" path="res://scenes/enemy_sprite_scene/guard_enemy.tscn" id="1_bywpx"]
+[ext_resource type="Script" uid="uid://c1fcnlhd7xmwf" path="res://scripts/enemy_scripts/patrol_path.gd" id="1_s10eq"]
+
+[node name="patrol_path" type="Path2D"]
+script = ExtResource("1_s10eq")
+move_speed = 50.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+loop = false
+
+[node name="guard_enemy" parent="PathFollow2D" instance=ExtResource("1_bywpx")]

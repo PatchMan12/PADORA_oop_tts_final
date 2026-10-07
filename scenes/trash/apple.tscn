@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://cklaj8701lrc4"]
+
+[ext_resource type="Texture2D" uid="uid://buq0l4egs71i6" path="res://assets/trash.png" id="1_ibnde"]
+[ext_resource type="Script" uid="uid://dbev68vhipjuj" path="res://scripts/trash_scripts/TrashItem.gd" id="2_daxr7"]
+[ext_resource type="AudioStream" uid="uid://bnkyqu3vhvu5i" path="res://assets/sound_asset/picking_trash.mp3" id="3_daxr7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vr8k"]
+atlas = ExtResource("1_ibnde")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dmh2"]
+atlas = ExtResource("1_ibnde")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg1xk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vr8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dmh2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biukc"]
+atlas = ExtResource("1_ibnde")
+region = Rect2(69.02165, 35.52345, 21.686981, 23.886864)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7wfc"]
+size = Vector2(10, 10)
+
+[node name="apple" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
+position = Vector2(6.7762636e-21, -5.75)
+scale = Vector2(0.625, 0.57812506)
+sprite_frames = SubResource("SpriteFrames_pg1xk")
+autoplay = "default"
+frame_progress = 0.3879571
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 16
+script = ExtResource("2_daxr7")
+item_id = "apple"
+category = 1
+icon = SubResource("AtlasTexture_biukc")
+points = 15
+pickup_sound = ExtResource("3_daxr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_a7wfc")

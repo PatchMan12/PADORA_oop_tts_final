@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjmemnvimedw6"]
+
+[ext_resource type="Texture2D" uid="uid://doc2owtgncyoj" path="res://assets/characters.png" id="1_8xog5"]
+[ext_resource type="PackedScene" uid="uid://756ckl0ocsvk" path="res://scenes/obstacles/killzone.tscn" id="2_wejy3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er0lr"]
+atlas = ExtResource("1_8xog5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulqa6"]
+atlas = ExtResource("1_8xog5")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r2odg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er0lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulqa6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.7
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6d8a"]
+size = Vector2(8.75, 12.75)
+
+[node name="guard_enemy" type="Node2D"]
+z_index = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_r2odg")
+autoplay = "default"
+frame_progress = 0.18574896
+
+[node name="killzone" parent="." instance=ExtResource("2_wejy3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(-1.375, -6.625)
+shape = SubResource("RectangleShape2D_l6d8a")

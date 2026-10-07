@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://cydu203b0qjld"]
+
+[ext_resource type="Script" uid="uid://dbev68vhipjuj" path="res://scripts/trash_scripts/TrashItem.gd" id="1_t6lmh"]
+[ext_resource type="Texture2D" uid="uid://buq0l4egs71i6" path="res://assets/trash.png" id="2_iw011"]
+[ext_resource type="AudioStream" uid="uid://bnkyqu3vhvu5i" path="res://assets/sound_asset/picking_trash.mp3" id="3_iw011"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy274"]
+atlas = ExtResource("2_iw011")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bauyg"]
+atlas = ExtResource("2_iw011")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rjd3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy274")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bauyg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6lmh"]
+atlas = ExtResource("2_iw011")
+region = Rect2(74.99393, 6.286747, 10.477531, 25.816658)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dsw0s"]
+radius = 4.0
+height = 24.0
+
+[node name="beer_bottle" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 9
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_rjd3x")
+autoplay = "default"
+frame_progress = 0.7535815
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_t6lmh")
+item_id = "beer_bottle"
+category = 0
+icon = SubResource("AtlasTexture_t6lmh")
+pickup_sound = ExtResource("3_iw011")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_dsw0s")
