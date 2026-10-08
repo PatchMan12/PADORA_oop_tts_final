@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ysugu6uyvhjw"]
 
 [ext_resource type="Script" uid="uid://byt6scm2r5voh" path="res://scripts/throwingTrash_minigame/SortingGame.gd" id="1_lv67f"]
-[ext_resource type="Texture2D" uid="uid://b76boqd607ktj" path="res://assets/trash_bio.png" id="2_orgad"]
+[ext_resource type="Texture2D" uid="uid://b76boqd607ktj" path="res://assets/image_asset/trash_bio.png" id="2_orgad"]
 [ext_resource type="Script" uid="uid://b1hi234oyqpsm" path="res://scripts/throwingTrash_minigame/DropZone.gd" id="3_orgad"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8bwk"]

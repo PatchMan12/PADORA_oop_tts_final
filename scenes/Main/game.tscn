@@ -1,7 +1,7 @@
 [gd_scene load_steps=53 format=3 uid="uid://72jimsdq544j"]
 
 [ext_resource type="PackedScene" uid="uid://2ftmqvfsycp4" path="res://scenes/player.tscn" id="1_ve4fd"]
-[ext_resource type="Texture2D" uid="uid://dgsekspm2v77c" path="res://assets/world_tileset.png" id="2_0sxbt"]
+[ext_resource type="Texture2D" uid="uid://dgsekspm2v77c" path="res://assets/image_asset/world_tileset.png" id="2_0sxbt"]
 [ext_resource type="PackedScene" uid="uid://756ckl0ocsvk" path="res://scenes/obstacles/killzone.tscn" id="3_p6xyy"]
 [ext_resource type="PackedScene" uid="uid://ud1h5og1htid" path="res://scenes/sprite_paths/enemy/patrol_path.tscn" id="4_jlvsb"]
 [ext_resource type="PackedScene" uid="uid://cpma248noot04" path="res://scenes/sprite_paths/enemy/spike_path.tscn" id="5_6oer7"]

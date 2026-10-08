@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://eo7rdf0cfx8s"]
 
-[ext_resource type="Texture2D" uid="uid://bo2smtj3arf6l" path="res://assets/trash_can.png" id="1_d6vse"]
+[ext_resource type="Texture2D" uid="uid://bo2smtj3arf6l" path="res://assets/image_asset/trash_can.png" id="1_d6vse"]
 [ext_resource type="Script" uid="uid://blvqpilgbeu52" path="res://scripts/throwingTrash_minigame/TrashCan.gd" id="2_iw0kf"]
 [ext_resource type="PackedScene" uid="uid://q8esjl00w7lj" path="res://scenes/sorting_minigame/sorting_game_2.tscn" id="3_srh3p"]
 

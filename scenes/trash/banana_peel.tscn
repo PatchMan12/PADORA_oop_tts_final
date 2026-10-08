@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://chinsbn0eq5mt"]
 
 [ext_resource type="Script" uid="uid://dbev68vhipjuj" path="res://scripts/trash_scripts/TrashItem.gd" id="1_1enli"]
-[ext_resource type="Texture2D" uid="uid://buq0l4egs71i6" path="res://assets/trash.png" id="2_cmut5"]
+[ext_resource type="Texture2D" uid="uid://buq0l4egs71i6" path="res://assets/image_asset/trash.png" id="2_cmut5"]
 [ext_resource type="AudioStream" uid="uid://bnkyqu3vhvu5i" path="res://assets/sound_asset/picking_trash.mp3" id="3_cmut5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je5nc"]

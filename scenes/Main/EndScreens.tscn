@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6a51onuku1l2" path="res://scripts/level_manager/EndScreen.gd" id="1_fyms0"]
 [ext_resource type="FontFile" uid="uid://b8s27lt34iuj6" path="res://assets/font/mago3.ttf" id="2_n5qwv"]
-[ext_resource type="Texture2D" uid="uid://sbxcnfq8v3yh" path="res://assets/end_screen.png" id="2_xk40a"]
+[ext_resource type="Texture2D" uid="uid://sbxcnfq8v3yh" path="res://assets/image_asset/end_screen.png" id="2_xk40a"]
 
 [node name="EndScreens" type="CanvasLayer"]
 script = ExtResource("1_fyms0")

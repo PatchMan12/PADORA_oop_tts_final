@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bb8bs1lc6okge"]
 
 [ext_resource type="Script" uid="uid://cfp70glk4736l" path="res://scripts/obstacles_scripts/jump_pad.gd" id="1_kabc6"]
-[ext_resource type="Texture2D" uid="uid://dgsekspm2v77c" path="res://assets/world_tileset.png" id="2_ityjr"]
+[ext_resource type="Texture2D" uid="uid://dgsekspm2v77c" path="res://assets/image_asset/world_tileset.png" id="2_ityjr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7ut2"]
 atlas = ExtResource("2_ityjr")

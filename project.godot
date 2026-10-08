@@ -20,7 +20,7 @@ PickupManager="*res://scripts/trash_scripts/trash_hitbox_functions/PickupManager
 ScoreManager="*res://scripts/UI/ScoreManager.gd"
 PlayerData="*res://scripts/main_menu/PlayerData.gd"
 LeaderboardManager="*res://scripts/main_menu/LeaderboardManager.gd"
-BackgroundMusic="*res://scenes/background_music.tscn"
+BackgroundMusic="*res://scenes/music/background_music.tscn"
 
 [dotnet]
 
