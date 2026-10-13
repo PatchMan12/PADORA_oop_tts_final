@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project_TTS"
-run/main_scene="uid://72jimsdq544j"
+run/main_scene="uid://dhoasn1rk8hch"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
@@ -21,6 +21,10 @@ ScoreManager="*res://scripts/UI/ScoreManager.gd"
 PlayerData="*res://scripts/main_menu/PlayerData.gd"
 LeaderboardManager="*res://scripts/main_menu/LeaderboardManager.gd"
 BackgroundMusic="*res://scenes/music/background_music.tscn"
+
+[display]
+
+window/size/resizable=false
 
 [dotnet]
 

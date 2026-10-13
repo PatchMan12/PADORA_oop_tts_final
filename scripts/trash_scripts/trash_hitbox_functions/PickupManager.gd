@@ -8,9 +8,9 @@ enum Category { RECYCLABLE, BIODEGRADABLE, GENERAL, HAZARDOUS }
 # item_id: String, icon: Texture2D, count: int, category: Category
 signal inventory_updated(item_id: String, icon: Texture2D, count: int, category: int)
 
-var counts: Dictionary = {}   # item_id -> int
-var icons: Dictionary = {}    # item_id -> Texture2D
-var categories: Dictionary = {} # item_id -> Category
+var counts: Dictionary = {}         # item_id -> int
+var icons: Dictionary = {}          # item_id -> Texture2D
+var categories: Dictionary = {}     # item_id -> Category
 var order: Array = []         # preserves first-seen order for UI layout
 
 func collect(item_id: String, icon: Texture2D, category: int) -> void:

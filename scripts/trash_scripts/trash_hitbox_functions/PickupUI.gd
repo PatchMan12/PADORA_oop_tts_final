@@ -1,35 +1,31 @@
 extends HBoxContainer
-# Attach to an HBoxContainer inside a CanvasLayer, anchored top-left.
-# Scene structure:
-#   CanvasLayer
-#     PickupUI (HBoxContainer)   <- this script here
 
-@export var icon_size: Vector2 = Vector2(32, 32)
-@export var entry_separation: int = 12
+@export var icon_size: Vector2 = Vector2(32, 32) #The sizeo f each trash icon in the HUD
+@export var entry_separation: int = 12 #remembers the HUD row created for each trash type
 
 # item_id -> { "label": Label }
 var entries: Dictionary = {}
 
-func _ready() -> void:
-	add_theme_constant_override("separation", entry_separation)
-	PickupManager.inventory_updated.connect(_on_inventory_updated)
+func _ready() -> void: #runs once when the scene loads
+	add_theme_constant_override("separation", entry_separation) #applies the spacing between entries.
+	PickupManager.inventory_updated.connect(_on_inventory_updated) #connects to PickupManager
 
 func _on_inventory_updated(item_id: String, icon: Texture2D, count: int, _category: int) -> void:
-	# Count hit zero (all thrown away) -> remove icon + label from the HUD
-	if count <= 0:
+	#runs each time an  item is collected or thrown
+	if count <= 0: #Count is 0 or less: the player has thrown all of that item, so the entr'y riw us deleted
 		if entries.has(item_id):
 			entries[item_id]["container"].queue_free()
 			entries.erase(item_id)
 		return
 
-	if not entries.has(item_id):
+	if not entries.has(item_id): #if there's no row for this item yet, _create_entry() makes one.
 		_create_entry(item_id, icon, count)
-	else:
-		entries[item_id]["label"].text = "x%d" % count
+	else:#if already exists, it updates the text to the new count (x3) 
+		entries[item_id]["label"].text = "x%d" % count 
 		_pulse(entries[item_id]["label"])
 
-func _create_entry(item_id: String, icon: Texture2D, count: int) -> void:
-	var entry := HBoxContainer.new()
+func _create_entry(item_id: String, icon: Texture2D, count: int) -> void: #builds a new HUD row in code
+	var entry := HBoxContainer.new() #holds a texture rect for the icon and a label for count
 	entry.add_theme_constant_override("separation", 4)
 
 	var texture_rect := TextureRect.new()
@@ -49,7 +45,7 @@ func _create_entry(item_id: String, icon: Texture2D, count: int) -> void:
 	entries[item_id] = { "label": label, "container": entry }
 	_pulse(label)
 
-func _pulse(label: Label) -> void:
+func _pulse(label: Label) -> void: #small visual effect
 	label.scale = Vector2(1.4, 1.4)
 	var tween := create_tween()
 	tween.tween_property(label, "scale", Vector2.ONE, 0.15).set_trans(Tween.TRANS_BACK)

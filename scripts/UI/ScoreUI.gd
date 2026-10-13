@@ -1,5 +1,5 @@
 extends Label
-# Attach to a Label placed top-middle in a CanvasLayer.
+# displays the score format
 
 func _ready() -> void:
 	ScoreManager.score_updated.connect(_on_score_updated)

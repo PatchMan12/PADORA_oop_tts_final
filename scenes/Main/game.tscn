@@ -404,7 +404,7 @@ ping_pong = true
 [node name="spike_path9" parent="spike" instance=ExtResource("5_6oer7")]
 position = Vector2(8, 231)
 curve = SubResource("Curve2D_qkk1r")
-move_speed = 500.0
+move_speed = 450.0
 ping_pong = true
 
 [node name="spike_path10" parent="spike" instance=ExtResource("5_6oer7")]
@@ -543,6 +543,7 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("9_6oer7")
 theme_override_font_sizes/font_size = 64
 script = ExtResource("10_626jk")
+time_limit = 240.0
 
 [node name="Count" type="Label" parent="CanvasLayer"]
 anchors_preset = 6

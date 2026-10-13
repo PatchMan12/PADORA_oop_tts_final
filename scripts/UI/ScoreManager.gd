@@ -1,5 +1,5 @@
 extends Node
-# Autoload this as "ScoreManager"
+										# Autoload this as "ScoreManager"
 
 signal score_updated(new_score: int)
 

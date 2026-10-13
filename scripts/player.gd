@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
+const SPEED = 130.0 #How fast the player walks left and right
+const JUMP_VELOCITY = -300.0#How strongly the player jumps (negative means upward)
 
-const DASH_SPEED = 400.0
+const DASH_SPEED = 400.0       #How strongly the player moves during dash
 const DASH_DURATION = 0.2      # how long the dash lasts, in seconds
 const DASH_COOLDOWN = 0.5      # time before you can dash again
 
