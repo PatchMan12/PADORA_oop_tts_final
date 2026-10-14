@@ -27,4 +27,4 @@ Aseprite v1.3.18.6
 | Trash Collecting | Organize and classifies the trash when being collected by the player.  | Finished |
 | Sorting Minigame | Players throw collected trash into the correct bins. | Finished |
 | Player Movement | Players maneuver through the environment to collect trash while dodging obstacles. | Finished |
-| Game Level | Features scattered trash and hazardous obstacles designed to deliver a fun and challenging gameplay experience. | Finished |
+| Game Level | Scattered trash and hazardous obstacles designed to deliver a fun and challenging gameplay experience. | Finished |
